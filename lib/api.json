@@ -1,0 +1,20 @@
+{
+    "baseurl": "https://music-api.musikki.com/v1",
+    "endpoints": {
+        "artists": {
+            "search": "/artists/{q}",
+            "info": "/artists/{mkid}{q}",
+            "bio": "/artists/{mkid}/bio",
+            "collaborations": "/artists/{mkid}/collaborations{q}",
+            "labels": "/artists/{mkid}/labels{q}",
+            "listen": "/artists/{mkid}/listen",
+            "news": "/artists/{mkid}/news{q}",
+            "related": "/artists/{mkid}/related{q}",
+            "releases": "/artists/{mkid}/releases{q}",
+            "releaseSummary": "/artists/{mkid}/releases/summary",
+            "social": "/artists/{mkid}/social{q}",
+            "songs": "/artists/{mkid}/songs{q}",
+            "videos": "/artists/{mkid}/videos{q}"
+        }
+    }
+}
