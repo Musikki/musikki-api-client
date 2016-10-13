@@ -1,8 +1,8 @@
 {
   "name": "musikki",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "JavaScript client for Musikki's Music API",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
