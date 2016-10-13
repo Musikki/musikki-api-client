@@ -2,7 +2,7 @@
     "baseurl": "https://music-api.musikki.com/v1",
     "endpoints": {
         "artists": {
-            "search": "/artists/{q}",
+            "search": "/artists{q}",
             "info": "/artists/{mkid}{q}",
             "bio": "/artists/{mkid}/bio",
             "collaborations": "/artists/{mkid}/collaborations{q}",
@@ -15,6 +15,43 @@
             "social": "/artists/{mkid}/social{q}",
             "songs": "/artists/{mkid}/songs{q}",
             "videos": "/artists/{mkid}/videos{q}"
+        },
+        "releases": {
+            "search": "/releases{q}",
+            "info": "/releases/{mkid}",
+            "editions": "/releases/{mkid}/editions{q}",
+            "listen": "/releases/{mkid}/listen",
+            "related": "/releases/{mkid}/related{q}",
+            "reviews": "/releases/{mkid}/reviews",
+            "songs": "/releases/{mkid}/songs{q}"
+        },
+        "editions": {
+            "search": "/editons{q}",
+            "info": "/editions/{mkid}",
+            "songs": "/editions/{mkid}/songs{q}"
+        },
+        "songs": {
+            "search": "/songs{q}",
+            "info": "/songs/{mkid}",
+            "featuredIn": "/songs/{mkid}/featuredin",
+            "listen": "/songs/{mkid}/listen"
+        },
+        "labels": {
+            "search": "/labels{q}",
+            "info": "/labels/{mkid}",
+            "artists": "/labels/{mkid}/artists{q}",
+            "editions": "/labels/{mkid}/editions{q}"
+        },
+        "collaborations": {
+            "search": "/collaborations{q}",
+            "info": "/collaborations/{mkid}"
+        },
+        "videos": {
+            "search": "/videos{q}"
+        },
+        "genres": {
+            "search": "/genres{q}",
+            "artists": "/genres/{mkid}/artists"
         }
     }
 }
