@@ -20,7 +20,7 @@ let musikki = new Musikki({ appid: yourAppID, appkey: yourAppKey });
 This implementation abstracts Music API's endpoints and methods with a familiar javascript chaining syntax:
 
 ```javascript
-musikki.endpoint(mkid).method(filter, paging)
+musikki.endpoint(mkid).method(filter, paging);
 ```
 
 All parameters are optional or required, depending on the specific endpoint and method called (see [API documentation](https://music-api.musikki.com) for more information)
@@ -39,16 +39,40 @@ All parameters are optional or required, depending on the specific endpoint and 
 To find all artists that match a given name
 
 ```javascript
-musikki.artists().search({ 'artist-name': 'slowdive' }).then(console.log);
+musikki.artists().search({ 'artist-name': 'slowdive' })
+        .then(console.log);
 ```
 
 ```javascript
-musikki.artists().search({ 'artist-name': 'the' }, { limit: 100, page: 10 }).then(console.log);
+musikki.artists().search({ 'artist-name': 'the' }, { limit: 100, page: 10 })
+        .then(console.log);
 ```
 
 To obtain info about a given artist
 
 ```javascript
-musikki.artists(100038744).info().then(console.log);
+musikki.artists(100038744).info()
+    .then(console.log);
 ```
 
+### Different casing styles for method parameters
+
+Method parameter (filter) names are automatically transformed (using `lodash.kebabCase`) to the correct format used by the music API so you can pick any style that fits your code best.
+
+```javascript
+musikki.artists().search({ artistName: 'morbid angel', label_name: 'earache' })
+        .then(console.log);
+```
+
+### Handling errors
+
+Any error the library encounters during usage will be wrapped and passed in a rejected promise so you can `.catch` it.
+
+```javascript
+musikki.artists().search()
+    .then(console.log)
+    .catch(console.error);
+```
+```
+{ status: 400, message: 'Bad Request', payload: { error: { message: 'invalid query!', detail: [Object] } } }
+```
