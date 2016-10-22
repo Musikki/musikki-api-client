@@ -3,6 +3,12 @@
     "esversion": 6,
     "node": true,
     "globals": {
-        "fetch": true
+        "fetch": true,
+        "describe"   : false,
+        "it"         : false,
+        "before"     : false,
+        "beforeEach" : false,
+        "after"      : false,
+        "afterEach"  : false
     }
 }
